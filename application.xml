@@ -1,27 +1,32 @@
-<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8"?>
 <application xmlns="http://ns.adobe.com/air/application/3.5">
-	
-	<id>YourFutureNeedsHelp</id> 
-	<versionNumber>1.0</versionNumber> 
-	<filename>YourFutureNeedsHelp</filename> 
-	
-	<name>YourFutureNeedsHelp</name> 
-	<description></description> 
-	<copyright></copyright> 
-	
-	<initialWindow> 
-		<title>YourFutureNeedsHelp</title> 
-		<content>YourFutureNeedsHelp.swf</content> 
-		<systemChrome>standard</systemChrome> 
-		<transparent>false</transparent> 
-		<visible>true</visible> 
-		<minimizable>true</minimizable> 
-		<maximizable>true</maximizable> 
-		<resizable>true</resizable> 
-	</initialWindow> 
-	
-	<!-- 
+  <id>YourFutureNeedsHelp</id>
+  <versionNumber>1.0</versionNumber>
+  <filename>YourFutureNeedsHelp</filename>
+  <name>YourFutureNeedsHelp</name>
+  <initialWindow>
+    <title>YourFutureNeedsHelp</title>
+    <content>YourFutureNeedsHelp.swf</content>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <minimizable>true</minimizable>
+    <maximizable>true</maximizable>
+    <resizable>true</resizable>
+  </initialWindow>
+  <!-- 
 	More options:
 	http://livedocs.adobe.com/flex/3/html/File_formats_1.html#1043413
 	-->
+  <icon>
+    <image16x16>icons/YourFutureNeedsHelp16.png</image16x16>
+    <image29x29>icons/YourFutureNeedsHelp29.png</image29x29>
+    <image32x32>icons/YourFutureNeedsHelp32.png</image32x32>
+    <image36x36>icons/YourFutureNeedsHelp36.png</image36x36>
+    <image48x48>icons/YourFutureNeedsHelp48.png</image48x48>
+    <image50x50>icons/YourFutureNeedsHelp50.png</image50x50>
+    <image57x57>icons/YourFutureNeedsHelp57.png</image57x57>
+    <image58x58>icons/YourFutureNeedsHelp58.png</image58x58>
+    <image72x72>icons/YourFutureNeedsHelp72.png</image72x72>
+  </icon>
 </application>
