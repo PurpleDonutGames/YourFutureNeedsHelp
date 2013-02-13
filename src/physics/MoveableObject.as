@@ -29,12 +29,15 @@ package physics
 			_left = left;
 			_jump = jump;
 			_speed = speed;
+			_defaultSpeed = speed;
 			_jumpSpeed = jumpSpeed;
+			_currentPlayer = this;	//may want to take this out soon to avoid list setting bugs in the render list
+			type = "moveable";
 		}
 		
 		override public function update():void 
 		{
-			FP.log(velocity);
+			FP.log(velocity, "fl: " + falling, "gr: " + grounded, "fs: " + fallingStart, "gs: " + groundedStart);
 			move();
 			jump();
 			gravity(force, grid);
@@ -48,8 +51,14 @@ package physics
 		
 		public function jump():void
 		{
-			FP.alarm(5, checkJump);
 			
+			if (Input.pressed(_jump) && grounded)
+			{
+				_jumping = true;
+				grounded = false;
+				falling = true;
+				velocity = -_jumpSpeed;
+			}
 			
 			if (_jumping)
 			{
@@ -62,28 +71,23 @@ package physics
 			}
 		}
 		
-		private function checkJump():void
-		{
-			if (Input.pressed(_jump) && grounded)
-			{
-				_jumping = true;
-				grounded = false;
-				falling = true;
-				velocity = -_jumpSpeed;
-			}
-		}
-		
 		override public function gravity(force:Number, grid:Grid = null):void 
 		{
 			
-			if (!_jumping)
+			if (!_jumping || collide("wall", x, y))
 			{
 				super.gravity(force, grid);
 			}
 			else
 			{
 				fall();
+				groundedStart = false;
 			}
+		}
+		
+		public static function get currentPlayer():MoveableObject
+		{
+			return _currentPlayer;
 		}
 		
 		/**
@@ -94,8 +98,12 @@ package physics
 		/** @private */ internal var _left:int;
 		/** @private */ internal var _jump:int;
 		/** @private */ internal var _speed:Number;
+		/** @private */ internal var _defaultSpeed:Number;
 		/** @private */ internal var _jumpSpeed:Number;
 		/** @private */ internal var _jumping:Boolean = false;
+		
+		/** @private */ internal static var _currentPlayer:MoveableObject;
+		/** @private */ internal static var _copyList:Vector.<MoveableObject>; //to be used soon
 		
 	}
 

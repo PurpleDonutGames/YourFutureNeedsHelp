@@ -22,6 +22,8 @@ package physics
 			super(X, Y, img);
 			setHitboxTo(img);
 			_force = force;
+			
+			type = "object";
 		}
 		
 		/**
@@ -118,7 +120,7 @@ package physics
 			
 			if (groundedStart)
 			{
-				snapToGround(30);
+				snapToGround(20);
 			}
 			if (fallingStart)
 			{
@@ -177,6 +179,7 @@ package physics
 		/** @private */ internal var _force:Number;
 		/** @private */ internal var _grid:Grid;
 		/** @private */ internal var _velocity:Number = 0;
+
 	}
 
 }

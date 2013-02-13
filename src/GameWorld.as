@@ -6,6 +6,7 @@ package
 	import net.flashpunk.World;
 	import physics.MoveableObject;
 	import physics.PhysicsObject;
+	import physics.pushableObject;
 	
 	/**
 	 * ...
@@ -16,7 +17,8 @@ package
 		
 		public function GameWorld() 
 		{
-			add(new MoveableObject(100, 100, new Image(new BitmapData(30, 30, true, 0xFFFF00FF)), 500, Key.RIGHT, Key.LEFT, Key.SPACE, 200, 400));
+			add(new MoveableObject(100, 100, new Image(new BitmapData(40, 80, true, 0xFFFF00FF)), 500, Key.RIGHT, Key.LEFT, Key.SPACE, 200, 400));
+			add(new pushableObject(500, 100, new Image(new BitmapData(40, 40, true, 0xFFFF0000)), 500, 50));
 		}
 		
 	}
